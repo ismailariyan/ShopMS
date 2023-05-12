@@ -84,8 +84,8 @@ public class cardProductController implements Initializable {
 
     public void addBtn() {
 
-        mainFormController mForm = new mainFormController();
-        mForm.customerID();
+        Menu menu = new Menu();
+        menu.customerID();
 
         qty = prod_spinner.getValue();
         String check = "";
@@ -184,7 +184,7 @@ public class cardProductController implements Initializable {
                     alert.setContentText("Successfully Added!");
                     alert.showAndWait();
                     
-                    mForm.menuGetTotal();
+                    menu.menuGetTotal();
                 }
             }
         } catch (Exception e) {
