@@ -1,0 +1,28 @@
+
+package shopms;
+
+import javafx.application.Application;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.stage.Stage;
+
+public class Main extends Application {
+    
+    @Override
+    public void start(Stage stage) throws Exception {
+        Parent root = FXMLLoader.load(getClass().getResource("loginScreen.fxml"));
+//        Parent root = FXMLLoader.load(getClass().getResource("mainForm.fxml"));
+        Scene scene = new Scene(root);
+        
+        stage.setTitle("Point of Sales System");
+        
+        stage.setScene(scene);
+        stage.show();
+    }
+
+       public static void main(String[] args) {
+        launch(args);
+    }
+    
+}
