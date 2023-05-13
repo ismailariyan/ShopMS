@@ -25,7 +25,7 @@ import java.util.ResourceBundle;
 public class mainFormController implements Initializable {
     
     @FXML
-    private Pane main_form;
+    private AnchorPane main_form;
     
     @FXML
     private Label username;
@@ -111,6 +111,14 @@ public class mainFormController implements Initializable {
     public void initialize(URL location, ResourceBundle resources) {
         
         displayUsername();
+        Parent root = null;
+        try {
+            root = FXMLLoader.load(getClass().getResource("dashboard.fxml"));
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+        main_form.getChildren().clear();
+        main_form.getChildren().add(root);
         
     }
     
