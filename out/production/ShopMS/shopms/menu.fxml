@@ -14,14 +14,14 @@
 
 <AnchorPane fx:id="menu_form" prefHeight="600.0" prefWidth="878.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="shopms.Menu">
    <children>
-      <AnchorPane layoutX="14.0" layoutY="17.0" prefHeight="566.0" prefWidth="512.0" stylesheets="@design/mainFormDesign.css" AnchorPane.bottomAnchor="17.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="352.0" AnchorPane.topAnchor="17.0">
+      <AnchorPane layoutX="2.0" layoutY="17.0" prefHeight="566.0" prefWidth="536.0" stylesheets="@design/mainFormDesign.css" AnchorPane.bottomAnchor="17.0" AnchorPane.leftAnchor="2.0" AnchorPane.rightAnchor="340.0" AnchorPane.topAnchor="17.0">
          <styleClass>
             <String fx:value="white-bg" />
             <String fx:value="shadow" />
             <String fx:value="radius" />
          </styleClass>
          <children>
-            <ScrollPane fx:id="menu_scrollPane" layoutX="13.0" layoutY="14.0" prefHeight="538.0" prefWidth="486.0" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="13.0" AnchorPane.rightAnchor="13.0" AnchorPane.topAnchor="14.0">
+            <ScrollPane fx:id="menu_scrollPane" layoutX="6.0" layoutY="14.0" prefHeight="538.0" prefWidth="523.0" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="6.0" AnchorPane.rightAnchor="7.0" AnchorPane.topAnchor="14.0">
                <content>
                   <GridPane fx:id="menu_gridPane" prefHeight="13.0" prefWidth="77.0">
                      <columnConstraints>
