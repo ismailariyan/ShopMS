@@ -12,6 +12,9 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.FileChooser;
 import javafx.stage.FileChooser.ExtensionFilter;
+import shopms.data;
+import shopms.database;
+import shopms.productData;
 
 import java.io.File;
 import java.net.URL;
@@ -27,28 +30,28 @@ public class Inventory implements Initializable {
     private AnchorPane inventory_form;
 
     @FXML
-    private TableView<shopms.productData> inventory_tableView;
+    private TableView<productData> inventory_tableView;
 
     @FXML
-    private TableColumn<shopms.productData, String> inventory_col_productID;
+    private TableColumn<productData, String> inventory_col_productID;
 
     @FXML
-    private TableColumn<shopms.productData, String> inventory_col_productName;
+    private TableColumn<productData, String> inventory_col_productName;
 
     @FXML
-    private TableColumn<shopms.productData, String> inventory_col_type;
+    private TableColumn<productData, String> inventory_col_type;
 
     @FXML
-    private TableColumn<shopms.productData, String> inventory_col_stock;
+    private TableColumn<productData, String> inventory_col_stock;
 
     @FXML
-    private TableColumn<shopms.productData, String> inventory_col_price;
+    private TableColumn<productData, String> inventory_col_price;
 
     @FXML
-    private TableColumn<shopms.productData, String> inventory_col_status;
+    private TableColumn<productData, String> inventory_col_status;
 
     @FXML
-    private TableColumn<shopms.productData, String> inventory_col_date;
+    private TableColumn<productData, String> inventory_col_date;
 
     @FXML
     private ImageView inventory_imageView;
@@ -102,7 +105,7 @@ public class Inventory implements Initializable {
                 || inventory_stock.getText().isEmpty()
                 || inventory_price.getText().isEmpty()
                 || inventory_status.getSelectionModel().getSelectedItem() == null
-                || shopms.data.path == null) {
+                || data.path == null) {
 
             alert = new Alert(AlertType.ERROR);
             alert.setTitle("Error Message");
@@ -142,7 +145,7 @@ public class Inventory implements Initializable {
                     prepare.setString(5, inventory_price.getText());
                     prepare.setString(6, (String) inventory_status.getSelectionModel().getSelectedItem());
 
-                    String path = shopms.data.path;
+                    String path = data.path;
                     path = path.replace("\\", "\\\\");
 
                     prepare.setString(7, path);
@@ -179,7 +182,7 @@ public class Inventory implements Initializable {
                 || inventory_stock.getText().isEmpty()
                 || inventory_price.getText().isEmpty()
                 || inventory_status.getSelectionModel().getSelectedItem() == null
-                || shopms.data.path == null || shopms.data.id == 0) {
+                || data.path == null || data.id == 0) {
 
             alert = new Alert(AlertType.ERROR);
             alert.setTitle("Error Message");
@@ -189,7 +192,7 @@ public class Inventory implements Initializable {
 
         } else {
 
-            String path = shopms.data.path;
+            String path = data.path;
             path = path.replace("\\", "\\\\");
 
             String updateData = "UPDATE product SET "
@@ -200,7 +203,7 @@ public class Inventory implements Initializable {
                     + inventory_price.getText() + "', status = '"
                     + inventory_status.getSelectionModel().getSelectedItem() + "', image = '"
                     + path + "', date = '"
-                    + shopms.data.date + "' WHERE id = " + shopms.data.id;
+                    + data.date + "' WHERE id = " + data.id;
 
             connect = database.connectDB();
 
@@ -240,7 +243,7 @@ public class Inventory implements Initializable {
     }
 
     public void inventoryDeleteBtn() {
-        if (shopms.data.id == 0) {
+        if (data.id == 0) {
 
             alert = new Alert(AlertType.ERROR);
             alert.setTitle("Error Message");
@@ -256,7 +259,7 @@ public class Inventory implements Initializable {
             Optional<ButtonType> option = alert.showAndWait();
 
             if (option.get().equals(ButtonType.OK)) {
-                String deleteData = "DELETE FROM product WHERE id = " + shopms.data.id;
+                String deleteData = "DELETE FROM product WHERE id = " + data.id;
                 try {
                     prepare = connect.prepareStatement(deleteData);
                     prepare.executeUpdate();
@@ -293,8 +296,8 @@ public class Inventory implements Initializable {
         inventory_stock.setText("");
         inventory_price.setText("");
         inventory_status.getSelectionModel().clearSelection();
-        shopms.data.path = "";
-        shopms.data.id = 0;
+        data.path = "";
+        data.id = 0;
         inventory_imageView.setImage(null);
 
     }
@@ -309,7 +312,7 @@ public class Inventory implements Initializable {
 
         if (file != null) {
 
-            shopms.data.path = file.getAbsolutePath();
+            data.path = file.getAbsolutePath();
             image = new Image(file.toURI().toString(), 120, 127, false, true);
 
             inventory_imageView.setImage(image);
@@ -317,9 +320,9 @@ public class Inventory implements Initializable {
     }
 
     // MERGE ALL DATA
-    public ObservableList<shopms.productData> inventoryDataList() {
+    public ObservableList<productData> inventoryDataList() {
 
-        ObservableList<shopms.productData> listData = FXCollections.observableArrayList();
+        ObservableList<productData> listData = FXCollections.observableArrayList();
 
         String sql = "SELECT * FROM product";
 
@@ -330,11 +333,11 @@ public class Inventory implements Initializable {
             prepare = connect.prepareStatement(sql);
             result = prepare.executeQuery();
 
-            shopms.productData prodData;
+            productData prodData;
 
             while (result.next()) {
 
-                prodData = new shopms.productData(result.getInt("id"),
+                prodData = new productData(result.getInt("id"),
                         result.getString("prod_id"),
                         result.getString("prod_name"),
                         result.getString("type"),
@@ -355,7 +358,7 @@ public class Inventory implements Initializable {
     }
 
     // TO SHOW DATA ON OUR TABLE
-    private ObservableList<shopms.productData> inventoryListData;
+    private ObservableList<productData> inventoryListData;
 
     public void inventoryShowData() {
         inventoryListData = inventoryDataList();
@@ -374,7 +377,7 @@ public class Inventory implements Initializable {
 
     public void inventorySelectData() {
 
-        shopms.productData prodData = inventory_tableView.getSelectionModel().getSelectedItem();
+        productData prodData = inventory_tableView.getSelectionModel().getSelectedItem();
         int num = inventory_tableView.getSelectionModel().getSelectedIndex();
 
         if ((num - 1) < -1) {
@@ -386,11 +389,11 @@ public class Inventory implements Initializable {
         inventory_stock.setText(String.valueOf(prodData.getStock()));
         inventory_price.setText(String.valueOf(prodData.getPrice()));
 
-        shopms.data.path = prodData.getImage();
+        data.path = prodData.getImage();
 
         String path = "File:" + prodData.getImage();
-        shopms.data.date = String.valueOf(prodData.getDate());
-        shopms.data.id = prodData.getId();
+        data.date = String.valueOf(prodData.getDate());
+        data.id = prodData.getId();
 
         image = new Image(path, 120, 127, false, true);
         inventory_imageView.setImage(image);

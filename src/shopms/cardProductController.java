@@ -19,6 +19,10 @@ import javafx.scene.control.SpinnerValueFactory;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
+import shopms.Menu;
+import shopms.data;
+import shopms.database;
+import shopms.productData;
 
 
 public class cardProductController implements Initializable {
@@ -41,7 +45,7 @@ public class cardProductController implements Initializable {
     @FXML
     private Button prod_addBtn;
 
-    private shopms.productData prodData;
+    private productData prodData;
     private Image image;
 
     private String prodID;
@@ -147,7 +151,7 @@ public class cardProductController implements Initializable {
                             + "(customer_id, prod_id, prod_name, type, quantity, price, date, image, em_username) "
                             + "VALUES(?,?,?,?,?,?,?,?,?)";
                     prepare = connect.prepareStatement(insertData);
-                    prepare.setString(1, String.valueOf(shopms.data.cID));
+                    prepare.setString(1, String.valueOf(data.cID));
                     prepare.setString(2, prodID);
                     prepare.setString(3, prod_name.getText());
                     prepare.setString(4, type);

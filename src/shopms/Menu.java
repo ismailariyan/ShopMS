@@ -43,16 +43,16 @@ public class Menu implements Initializable {
     private GridPane menu_gridPane;
 
     @FXML
-    private TableView<shopms.productData> menu_tableView;
+    private TableView<productData> menu_tableView;
 
     @FXML
-    private TableColumn<shopms.productData, String> menu_col_productName;
+    private TableColumn<productData, String> menu_col_productName;
 
     @FXML
-    private TableColumn<shopms.productData, String> menu_col_quantity;
+    private TableColumn<productData, String> menu_col_quantity;
 
     @FXML
-    private TableColumn<shopms.productData, String> menu_col_price;
+    private TableColumn<productData, String> menu_col_price;
 
     @FXML
     private Label menu_total;
@@ -79,24 +79,24 @@ public class Menu implements Initializable {
     private ResultSet result;
     private Image image;
 
-    private ObservableList<shopms.productData> cardListData = FXCollections.observableArrayList();
+    private ObservableList<productData> cardListData = FXCollections.observableArrayList();
 
 
-    public ObservableList<shopms.productData> menuGetData() {
+    public ObservableList<productData> menuGetData() {
 
         String sql = "SELECT * FROM product";
 
-        ObservableList<shopms.productData> listData = FXCollections.observableArrayList();
+        ObservableList<productData> listData = FXCollections.observableArrayList();
         connect = database.connectDB();
 
         try {
             prepare = connect.prepareStatement(sql);
             result = prepare.executeQuery();
 
-            shopms.productData prod;
+            productData prod;
 
             while (result.next()) {
-                prod = new shopms.productData(result.getInt("id"),
+                prod = new productData(result.getInt("id"),
                         result.getString("prod_id"),
                         result.getString("prod_name"),
                         result.getString("type"),
@@ -151,9 +151,9 @@ public class Menu implements Initializable {
         }
     }
 
-    public ObservableList<shopms.productData> menuGetOrder() {
+    public ObservableList<productData> menuGetOrder() {
         customerID();
-        ObservableList<shopms.productData> listData = FXCollections.observableArrayList();
+        ObservableList<productData> listData = FXCollections.observableArrayList();
 
         String sql = "SELECT * FROM customer WHERE customer_id = " + cID;
 
@@ -164,10 +164,10 @@ public class Menu implements Initializable {
             prepare = connect.prepareStatement(sql);
             result = prepare.executeQuery();
 
-            shopms.productData prod;
+            productData prod;
 
             while (result.next()) {
-                prod = new shopms.productData(result.getInt("id"),
+                prod = new productData(result.getInt("id"),
                         result.getString("prod_id"),
                         result.getString("prod_name"),
                         result.getString("type"),
@@ -185,7 +185,7 @@ public class Menu implements Initializable {
         return listData;
     }
 
-    private ObservableList<shopms.productData> menuOrderListData;
+    private ObservableList<productData> menuOrderListData;
 
     public void menuShowOrderData() {
         menuOrderListData = menuGetOrder();
@@ -301,7 +301,7 @@ public class Menu implements Initializable {
                         java.sql.Date sqlDate = new java.sql.Date(date.getTime());
 
                         prepare.setString(3, String.valueOf(sqlDate));
-                        prepare.setString(4, shopms.data.username);
+                        prepare.setString(4, data.username);
 
                         prepare.executeUpdate();
 
@@ -417,7 +417,7 @@ public class Menu implements Initializable {
                 cID += 1;
             }
 
-            shopms.data.cID = cID;
+            data.cID = cID;
 
         } catch (Exception e) {
             e.printStackTrace();
