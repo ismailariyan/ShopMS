@@ -1,6 +1,5 @@
 package shopms;
 
-
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -20,7 +19,6 @@ import net.sf.jasperreports.engine.JasperReport;
 import net.sf.jasperreports.engine.design.JasperDesign;
 import net.sf.jasperreports.engine.xml.JRXmlLoader;
 import net.sf.jasperreports.view.JasperViewer;
-
 import java.net.URL;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -59,6 +57,9 @@ public class Menu implements Initializable {
 
     @FXML
     private TextField menu_amount;
+
+    @FXML
+    private TextField cell_no;
 
     @FXML
     private Label menu_change;
@@ -385,6 +386,7 @@ public class Menu implements Initializable {
                 e.printStackTrace();
             }
 
+            System.out.println(cell_no.getText());
         }
 
     }
@@ -431,6 +433,7 @@ public class Menu implements Initializable {
         menu_total.setText("$0.0");
         menu_amount.setText("");
         menu_change.setText("$0.0");
+        cell_no.setText("");
     }
 
     @Override

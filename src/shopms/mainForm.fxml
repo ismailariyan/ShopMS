@@ -62,7 +62,7 @@
                   </AnchorPane>
                </left>
                <center>
-                  <AnchorPane fx:id="main_form" BorderPane.alignment="CENTER" />
+                  <StackPane fx:id="main_form" prefHeight="150.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
                </center>
             </BorderPane>
          </children>

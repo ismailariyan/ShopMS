@@ -12,7 +12,7 @@ import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.Label;
-import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 import java.io.IOException;
 import java.net.URL;
@@ -22,7 +22,7 @@ import java.util.ResourceBundle;
 public class mainFormController implements Initializable {
     
     @FXML
-    private AnchorPane main_form;
+    private StackPane main_form;
     
     @FXML
     private Label username;
@@ -42,21 +42,18 @@ public class mainFormController implements Initializable {
     public void inventory(ActionEvent event)throws IOException{
         main_form.getChildren().clear();
         Parent root = FXMLLoader.load(getClass().getResource("inventory.fxml"));
-
         main_form.getChildren().add(root);
     }
     @FXML
     public void menu(ActionEvent event)throws IOException{
         main_form.getChildren().clear();
         Parent root = FXMLLoader.load(getClass().getResource("menu.fxml"));
-
         main_form.getChildren().add(root);
     }
     @FXML
     public void custData(ActionEvent event) throws  IOException{
         main_form.getChildren().clear();
         Parent root = FXMLLoader.load(getClass().getResource("customer_form.fxml"));
-
         main_form.getChildren().add(root);
     }
 // LETS PROCEED TO OUR DASHBOARD FORM : )
@@ -111,11 +108,12 @@ public class mainFormController implements Initializable {
         Parent root = null;
         try {
             root = FXMLLoader.load(getClass().getResource("dashboard.fxml"));
+            main_form.getChildren().clear();
+            main_form.getChildren().add(root);
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
-        main_form.getChildren().clear();
-        main_form.getChildren().add(root);
+
         
     }
     
