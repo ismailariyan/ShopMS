@@ -16,6 +16,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.ResourceBundle;
+/gg
 
 public class CustomerForm implements Initializable {
     @FXML
@@ -84,5 +85,6 @@ public class CustomerForm implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
+        customersShowData();
     }
 }
