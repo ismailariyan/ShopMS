@@ -399,7 +399,7 @@ public class Inventory implements Initializable {
         inventory_imageView.setImage(image);
     }
 
-    private String[] typeList = {"Groceries", "Beverages","Dairies", "Bakery", "Meat and Seafood", "Frozen Foods", "Cleaning Supplies", "Toiletries", "Snacks and Sweets" };
+    private String[] typeList = {"Groceries", "Beverages","Dairies", "Bakery", "Meat", "Frozen Foods", "Cleaning Supplies", "Toiletries", "Snacks", "Sweets" };
 
     public void inventoryTypeList() {
 

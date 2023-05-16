@@ -1,13 +1,26 @@
 
 .header{
-    -fx-background-color: linear-gradient(to bottom right, #098c53, #246861);
+    -fx-background-color: linear-gradient(to bottom right, #f5ebe0, #f0dbdb);
     -fx-border-color: #fff;
     -fx-border-width: 0 0 .8px 0;
 }
 
 .nav-form{
-    -fx-background-color: linear-gradient(to bottom right, #0f6789, #286155);
+    -fx-background-color: linear-gradient(to bottom right, #AA5656, #DBA39A);
 }
+.number-customer{
+-fx-background-color: linear-gradient(to bottom right, #AA5656, #DBA39A);
+}
+.number-todayincome{
+-fx-background-color: linear-gradient(to bottom right, #AA5656, #DBA39A);
+}
+.number-totalcustomer{
+-fx-background-color: linear-gradient(to bottom right, #AA5656, #DBA39A);
+}
+.number-customer{
+-fx-background-color: linear-gradient(to bottom right, #AA5656, #DBA39A);
+}
+
 
 .nav-btn{
     -fx-background-color: transparent;
@@ -37,7 +50,7 @@
 }
 
 .white-bg{
-    -fx-background-color: #fff;
+    -fx-background-color: #FEFCF3;
 }
 
 .radius{
@@ -51,12 +64,12 @@
 .table-view{
     -fx-background-color: transparent;
     -fx-padding: 0;
-    -fx-border-color: linear-gradient(to bottom right, #0f6789, #286155);
+    -fx-border-color: linear-gradient(to bottom right, #AA5656, #DBA39A);
     -fx-border-radius: 5px;
     -fx-border-width: 1.5px;
 }
 .table-view .column-header-background{
-    -fx-background-color: linear-gradient(to bottom right, #0f6789, #286155);
+    -fx-background-color: linear-gradient(to bottom right, #AA5656, #DBA39A);
     -fx-background-radius: 5px 5px 0 0;
     -fx-background-insets: 0 0 0 0;
 }
@@ -69,11 +82,11 @@
 }
 
 .btn{
-    -fx-background-color: linear-gradient(to bottom right, #098c53, #246861); 
+    -fx-background-color: linear-gradient(to bottom right, #AA5656, #DBA39A);
     -fx-cursor: hand;
     -fx-text-fill: #fff;
     -fx-font-size: 14px;
 }
 .btn:hover{
-    -fx-background-color: linear-gradient(to bottom right, #0fb565, #399a8f); 
+    -fx-background-color: linear-gradient(to bottom right, #E06469, #DBA39A);
 }
