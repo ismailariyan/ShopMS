@@ -30,6 +30,8 @@ import java.util.Optional;
 import java.util.ResourceBundle;
 
 public class Menu implements Initializable {
+    static Menu m2 = new Menu();
+
 
     @FXML
     private AnchorPane menu_form;
@@ -58,8 +60,6 @@ public class Menu implements Initializable {
     @FXML
     private TextField menu_amount;
 
-    @FXML
-    private TextField cell_no;
 
     @FXML
     private Label menu_change;
@@ -305,14 +305,22 @@ public class Menu implements Initializable {
                         prepare.setString(4, data.username);
 
                         prepare.executeUpdate();
-
-                        alert = new Alert(AlertType.INFORMATION);
-                        alert.setTitle("Information Message");
-                        alert.setHeaderText(null);
-                        alert.setContentText("Successful.");
-                        alert.showAndWait();
-
                         menuShowOrderData();
+                        alert = new Alert(AlertType.CONFIRMATION);
+                        alert.setTitle("Receipt Print");
+                        alert.setHeaderText(null);
+                        alert.setContentText("Would you like to Print the receipt?");
+                        Optional<ButtonType> option1 = alert.showAndWait();
+                        if(option1.get().equals(ButtonType.OK)){
+                            menuReceiptBtn();
+                        }else {
+                            alert = new Alert(AlertType.INFORMATION);
+                            alert.setTitle("Information Message");
+                            alert.setHeaderText(null);
+                            alert.setContentText("Thank you for Saving Paper.");
+                            alert.showAndWait();
+                            menuRestart();
+                        }
 
                     } else {
                         alert = new Alert(AlertType.WARNING);
@@ -385,8 +393,6 @@ public class Menu implements Initializable {
             } catch (Exception e) {
                 e.printStackTrace();
             }
-
-            System.out.println(cell_no.getText());
         }
 
     }
@@ -433,9 +439,7 @@ public class Menu implements Initializable {
         menu_total.setText("$0.0");
         menu_amount.setText("");
         menu_change.setText("$0.0");
-        cell_no.setText("");
     }
-
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         menuDisplayCard();

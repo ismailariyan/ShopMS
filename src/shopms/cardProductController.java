@@ -1,4 +1,3 @@
-
 package shopms;
 
 import java.net.URL;
@@ -8,6 +7,7 @@ import java.sql.ResultSet;
 import java.util.Date;
 import java.util.ResourceBundle;
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
@@ -26,6 +26,7 @@ import shopms.productData;
 
 
 public class cardProductController implements Initializable {
+    Menu menu = new Menu();
 
     @FXML
     private AnchorPane card_form;
@@ -76,6 +77,7 @@ public class cardProductController implements Initializable {
         pr = prodData.getPrice();
 
     }
+
     private int qty;
 
     public void setQuantity() {
@@ -85,10 +87,8 @@ public class cardProductController implements Initializable {
 
     private double totalP;
     private double pr;
-
+mainFormController mff = new mainFormController();
     public void addBtn() {
-
-        Menu menu = new Menu();
         menu.customerID();
 
         qty = prod_spinner.getValue();
@@ -109,19 +109,19 @@ public class cardProductController implements Initializable {
             if (result.next()) {
                 checkStck = result.getInt("stock");
             }
-            
+
             if(checkStck == 0){
-                
+
                 String updateStock = "UPDATE product SET prod_name = '"
-                            + prod_name.getText() + "', type = '"
-                            + type + "', stock = 0, price = " + pr
-                            + ", status = 'Unavailable', image = '"
-                            + prod_image + "', date = '"
-                            + prod_date + "' WHERE prod_id = '"
-                            + prodID + "'";
+                        + prod_name.getText() + "', type = '"
+                        + type + "', stock = 0, price = " + pr
+                        + ", status = 'Unavailable', image = '"
+                        + prod_image + "', date = '"
+                        + prod_date + "' WHERE prod_id = '"
+                        + prodID + "'";
                 prepare = connect.prepareStatement(updateStock);
                 prepare.executeUpdate();
-                
+
             }
 
             prepare = connect.prepareStatement(checkAvailable);
@@ -147,7 +147,7 @@ public class cardProductController implements Initializable {
                     alert.showAndWait();
                 } else {
                     prod_image = prod_image.replace("\\", "\\\\");
-                                        String insertData = "INSERT INTO customer "
+                    String insertData = "INSERT INTO customer "
                             + "(customer_id, prod_id, prod_name, type, quantity, price, date, image, em_username) "
                             + "VALUES(?,?,?,?,?,?,?,?,?)";
                     prepare = connect.prepareStatement(insertData);
@@ -187,7 +187,9 @@ public class cardProductController implements Initializable {
                     alert.setHeaderText(null);
                     alert.setContentText("Successfully Added!");
                     alert.showAndWait();
-                   menu.menuGetTotal();
+//                    menu.menuGetTotal();
+
+
                 }
             }
         } catch (Exception e) {

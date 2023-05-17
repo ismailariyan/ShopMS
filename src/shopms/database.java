@@ -8,7 +8,7 @@ public class database {
 
     public static Connection connectDB() {
         if (conn != null) return conn;
-        String dbName = "shop";
+        String dbName = " shop";
         String Username = "root";
         String password = "@ariyan77";
         return connectDB(dbName, Username, password);
@@ -19,6 +19,7 @@ public class database {
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
             conn = DriverManager.getConnection("jdbc:mysql://localhost/" + databaseName + "?user=" + UserName + "&password=" + password);
+//            conn = DriverManager.getConnection("jdbc:mysql://sql12.freesqldatabase.com/" + databaseName + "?user=" + UserName + "&password=" + password);
         } catch (Exception e) {
             e.printStackTrace();
         }

@@ -50,10 +50,21 @@ public class mainFormController implements Initializable {
         Parent root = FXMLLoader.load(getClass().getResource("menu.fxml"));
         main_form.getChildren().add(root);
     }
+    public void menu()throws IOException{
+        main_form.getChildren().clear();
+        Parent root = FXMLLoader.load(getClass().getResource("menu.fxml"));
+        main_form.getChildren().add(root);
+    }
     @FXML
     public void custData(ActionEvent event) throws  IOException{
         main_form.getChildren().clear();
         Parent root = FXMLLoader.load(getClass().getResource("customer_form.fxml"));
+        main_form.getChildren().add(root);
+    }
+    @FXML
+    public void empStats(ActionEvent event) throws  IOException{
+        main_form.getChildren().clear();
+        Parent root = FXMLLoader.load(getClass().getResource("empSales.fxml"));
         main_form.getChildren().add(root);
     }
 // LETS PROCEED TO OUR DASHBOARD FORM : )

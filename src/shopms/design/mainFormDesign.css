@@ -10,15 +10,19 @@
 }
 .number-customer{
 -fx-background-color: linear-gradient(to bottom right, #AA5656, #DBA39A);
+-fx-background-radius: 25px;
 }
 .number-todayincome{
 -fx-background-color: linear-gradient(to bottom right, #AA5656, #DBA39A);
+-fx-background-radius: 25px;
 }
 .number-totalcustomer{
 -fx-background-color: linear-gradient(to bottom right, #AA5656, #DBA39A);
+-fx-background-radius: 25px;
 }
-.number-customer{
+.number-totalSales{
 -fx-background-color: linear-gradient(to bottom right, #AA5656, #DBA39A);
+-fx-background-radius: 25px;
 }
 
 

@@ -59,8 +59,8 @@
                                     <Font size="15.0" />
                                  </font>
                               </Label>
-                              <Button fx:id="customers_btn1" layoutY="410.0" mnemonicParsing="false" onAction="#custData" prefHeight="70.0" prefWidth="222.0" styleClass="nav-btn" stylesheets="@design/mainFormDesign.css" text="Emp Sales" />
-                              <Button fx:id="customers_btn11" layoutY="480.0" mnemonicParsing="false" onAction="#custData" prefHeight="70.0" prefWidth="222.0" styleClass="nav-btn" stylesheets="@design/mainFormDesign.css" text="Prouct  info" />
+                              <Button fx:id="customers_btn1" layoutY="410.0" mnemonicParsing="false" onAction="#empStats" prefHeight="70.0" prefWidth="222.0" styleClass="nav-btn" stylesheets="@design/mainFormDesign.css" text="Emp Stats" />
+                              <Button fx:id="customers_btn11" layoutY="480.0" mnemonicParsing="false" onAction="#custData" prefHeight="70.0" prefWidth="222.0" styleClass="nav-btn" stylesheets="@design/mainFormDesign.css" text="Product Insights" />
                            </children>
                         </AnchorPane>
                      </children>

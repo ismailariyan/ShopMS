@@ -26,7 +26,7 @@
                <columns>
                   <TableColumn fx:id="customers_col_customerID" prefWidth="211.0" text="Customer ID" />
                   <TableColumn fx:id="customers_col_total" prefWidth="241.0" text="Total ($)" />
-                  <TableColumn fx:id="customers_col_date" prefWidth="171.0" text="Date" />
+                  <TableColumn fx:id="customers_col_date" prefWidth="171.0" sortType="DESCENDING" text="Date" />
                   <TableColumn fx:id="customers_col_cashier" prefWidth="175.0" text="Cashier" />
                </columns>
                <columnResizePolicy>
