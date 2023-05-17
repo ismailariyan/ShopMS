@@ -82,12 +82,13 @@
     -fx-text-fill: #fff;
 }
 
-.btn{
+.btn {
     -fx-background-color: linear-gradient(to bottom right, #AA5656, #DBA39A);
     -fx-cursor: hand;
     -fx-text-fill: #fff;
-    -fx-font-size: 14px;
+    -fx-background-radius: 20px; /* Add this line to make the button rounded */
 }
-.btn:hover{
+
+.btn:hover {
     -fx-background-color: linear-gradient(to bottom right, #E06469, #DBA39A);
 }

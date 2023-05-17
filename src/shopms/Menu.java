@@ -374,7 +374,7 @@ public class Menu implements Initializable {
 
             try {
 
-                JasperDesign jDesign = JRXmlLoader.load("D:\\Java Projects\\ShopMS\\src\\shopms\\report.jrxml");
+                JasperDesign jDesign = JRXmlLoader.load("src\\shopms\\report.jrxml");
                 JasperReport jReport = JasperCompileManager.compileReport(jDesign);
                 JasperPrint jPrint = JasperFillManager.fillReport(jReport, map, connect);
 
