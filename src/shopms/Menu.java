@@ -137,7 +137,7 @@ public class Menu implements Initializable {
                 cardProductController cardC = load.getController();
                 cardC.setData(cardListData.get(q));
 
-                if (column == 2) {
+                if (column == 5) {
                     column = 0;
                     row += 1;
                 }

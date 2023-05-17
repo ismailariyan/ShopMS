@@ -38,13 +38,13 @@
                                     <Font size="18.0" />
                                  </font>
                               </Label>
-                              <Button fx:id="dashboard_btn" layoutY="150.0" mnemonicParsing="false" onAction="#dashboard" prefHeight="80.0" prefWidth="222.0" styleClass="nav-btn" stylesheets="@design/mainFormDesign.css" text="Dashboard">
+                              <Button fx:id="dashboard_btn" layoutY="130.0" mnemonicParsing="false" onAction="#dashboard" prefHeight="70.0" prefWidth="222.0" styleClass="nav-btn" stylesheets="@design/mainFormDesign.css" text="Dashboard">
                                  <font>
                                     <Font size="36.0" />
                                  </font></Button>
-                              <Button fx:id="inventory_btn" layoutY="230.0" mnemonicParsing="false" onAction="#inventory" prefHeight="80.0" prefWidth="222.0" styleClass="nav-btn" stylesheets="@design/mainFormDesign.css" text="Inventory" />
-                              <Button fx:id="menu_btn" layoutY="310.0" mnemonicParsing="false" onAction="#menu" prefHeight="80.0" prefWidth="222.0" styleClass="nav-btn" stylesheets="@design/mainFormDesign.css" text="Menu" />
-                              <Button fx:id="customers_btn" layoutY="390.0" mnemonicParsing="false" onAction="#custData" prefHeight="80.0" prefWidth="222.0" styleClass="nav-btn" stylesheets="@design/mainFormDesign.css" text="Customers" />
+                              <Button fx:id="inventory_btn" layoutY="200.0" mnemonicParsing="false" onAction="#inventory" prefHeight="70.0" prefWidth="222.0" styleClass="nav-btn" stylesheets="@design/mainFormDesign.css" text="Inventory" />
+                              <Button fx:id="menu_btn" layoutY="270.0" mnemonicParsing="false" onAction="#menu" prefHeight="70.0" prefWidth="222.0" styleClass="nav-btn" stylesheets="@design/mainFormDesign.css" text="Menu" />
+                              <Button fx:id="customers_btn" layoutY="340.0" mnemonicParsing="false" onAction="#custData" prefHeight="70.0" prefWidth="222.0" styleClass="nav-btn" stylesheets="@design/mainFormDesign.css" text="Customers" />
                               <Button fx:id="logout_btn" layoutX="14.0" layoutY="554.0" mnemonicParsing="false" onAction="#logout" stylesheets="@design/mainFormDesign.css" AnchorPane.bottomAnchor="12.0" AnchorPane.leftAnchor="14.0">
                                  <graphic>
                                     <FontAwesomeIcon fill="WHITE" glyphName="SIGN_OUT" size="2em" />
@@ -59,6 +59,8 @@
                                     <Font size="15.0" />
                                  </font>
                               </Label>
+                              <Button fx:id="customers_btn1" layoutY="410.0" mnemonicParsing="false" onAction="#custData" prefHeight="70.0" prefWidth="222.0" styleClass="nav-btn" stylesheets="@design/mainFormDesign.css" text="Emp Sales" />
+                              <Button fx:id="customers_btn11" layoutY="480.0" mnemonicParsing="false" onAction="#custData" prefHeight="70.0" prefWidth="222.0" styleClass="nav-btn" stylesheets="@design/mainFormDesign.css" text="Prouct  info" />
                            </children>
                         </AnchorPane>
                      </children>

@@ -14,7 +14,7 @@
 
 <AnchorPane fx:id="menu_form" prefHeight="600.0" prefWidth="878.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="shopms.Menu">
    <children>
-      <AnchorPane layoutX="2.0" layoutY="17.0" prefHeight="566.0" prefWidth="536.0" stylesheets="@design/mainFormDesign.css" AnchorPane.bottomAnchor="17.0" AnchorPane.leftAnchor="2.0" AnchorPane.rightAnchor="340.0" AnchorPane.topAnchor="17.0">
+      <AnchorPane layoutX="2.0" layoutY="17.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="566.0" prefWidth="536.0" stylesheets="@design/mainFormDesign.css" AnchorPane.bottomAnchor="17.0" AnchorPane.leftAnchor="2.0" AnchorPane.rightAnchor="340.0" AnchorPane.topAnchor="17.0">
          <styleClass>
             <String fx:value="white-bg" />
             <String fx:value="shadow" />
@@ -32,7 +32,7 @@
             </ScrollPane>
          </children>
       </AnchorPane>
-      <AnchorPane layoutX="544.0" layoutY="17.0" prefHeight="566.0" prefWidth="320.0" stylesheets="@design/mainFormDesign.css" AnchorPane.bottomAnchor="17.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="17.0">
+      <AnchorPane layoutX="544.0" layoutY="17.0" maxWidth="400.0" minWidth="320.0" prefHeight="566.0" prefWidth="320.0" stylesheets="@design/mainFormDesign.css" AnchorPane.bottomAnchor="17.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="17.0">
          <styleClass>
             <String fx:value="white-bg" />
             <String fx:value="shadow" />

@@ -72,7 +72,7 @@ WHERE
 	<title>
 		<band height="58" splitType="Stretch">
 			<staticText>
-				<reportElement x="47" y="21" width="100" height="20" uuid="389f7957-817f-4fbb-81a9-de1e300008c2"/>
+				<reportElement x="2" y="21" width="200" height="20" uuid="389f7957-817f-4fbb-81a9-de1e300008c2"/>
 				<textElement textAlignment="Center">
 					<font fontName="Comic Sans MS" isBold="true"/>
 				</textElement>
