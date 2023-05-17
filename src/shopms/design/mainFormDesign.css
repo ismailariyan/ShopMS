@@ -87,7 +87,6 @@
     -fx-cursor: hand;
     -fx-text-fill: #fff;
     -fx-font-size: 18px;
-    -fx-font-family: Impact;
     -fx-background-radius: 20px; /* Add this line to make the button rounded */
 }
 
