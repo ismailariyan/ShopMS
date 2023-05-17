@@ -14,7 +14,6 @@ import javafx.scene.chart.BarChart;
 import javafx.scene.chart.XYChart;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
-import shopms.database;
 
 public class Dashboard implements Initializable{
     @FXML
@@ -148,10 +147,10 @@ public class Dashboard implements Initializable{
         }
     }
 
-    public void dashboardCustomerChart(){
+    public void DashboardProductChart(){
         dashboard_CustomerChart.getData().clear();
 
-        String sql = "SELECT date, COUNT(id) FROM receipt GROUP BY date ORDER BY TIMESTAMP(date)";
+        String sql = "SELECT prod_name, SUM(price) pp FROM customer GROUP BY prod_name ORDER BY pp DESC";
         connect = database.connectDB();
         XYChart.Series chart = new XYChart.Series();
         try {
@@ -175,7 +174,7 @@ public class Dashboard implements Initializable{
         dashboardTotalI();
         dashboardNSP();
         dashboardIncomeChart();
-        dashboardCustomerChart();
+        DashboardProductChart();
 
     }
 }
