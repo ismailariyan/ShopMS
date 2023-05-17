@@ -431,6 +431,12 @@ public class Menu implements Initializable {
             e.printStackTrace();
         }
     }
+    public void menuRefresh(){
+        menuDisplayCard();
+        menuGetOrder();
+        menuDisplayTotal();
+        menuShowOrderData();
+    }
 
     public void menuRestart() {
         totalP = 0;

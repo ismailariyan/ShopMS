@@ -39,42 +39,45 @@
             <String fx:value="radius" />
          </styleClass>
          <children>
-            <TableView fx:id="menu_tableView" layoutX="13.0" layoutY="14.0" onMouseClicked="#menuSelectOrder" prefHeight="249.0" prefWidth="295.0" AnchorPane.bottomAnchor="303.0" AnchorPane.leftAnchor="13.0" AnchorPane.rightAnchor="12.0" AnchorPane.topAnchor="14.0">
+            <TableView fx:id="menu_tableView" layoutX="13.0" layoutY="25.0" onMouseClicked="#menuSelectOrder" prefHeight="249.0" prefWidth="295.0" AnchorPane.bottomAnchor="292.0" AnchorPane.leftAnchor="13.0" AnchorPane.rightAnchor="12.0" AnchorPane.topAnchor="25.0">
                <columns>
                   <TableColumn fx:id="menu_col_productName" prefWidth="115.0" text="Product Name" />
                   <TableColumn fx:id="menu_col_quantity" prefWidth="79.0" text="Quantity" />
                   <TableColumn fx:id="menu_col_price" prefWidth="99.0" text="Price ($)" />
                </columns>
             </TableView>
-            <Label layoutX="87.0" layoutY="283.0" text="Total: " AnchorPane.bottomAnchor="262.0" AnchorPane.rightAnchor="192.0">
+            <Label layoutX="87.0" layoutY="332.0" text="Total: " AnchorPane.bottomAnchor="213.0" AnchorPane.rightAnchor="192.0">
                <font>
                   <Font size="15.0" />
                </font>
             </Label>
-            <Label fx:id="menu_total" layoutX="128.0" layoutY="283.0" prefHeight="21.0" prefWidth="127.0" text="\$0.0" AnchorPane.bottomAnchor="262.0" AnchorPane.rightAnchor="65.0">
+            <Label fx:id="menu_total" layoutX="128.0" layoutY="332.0" prefHeight="21.0" prefWidth="127.0" text="\$0.0" AnchorPane.bottomAnchor="213.0" AnchorPane.rightAnchor="65.0">
                <font>
                   <Font size="15.0" />
                </font>
             </Label>
-            <Label layoutX="66.0" layoutY="313.0" text="Amount:" AnchorPane.bottomAnchor="232.0" AnchorPane.rightAnchor="197.0">
+            <Label layoutX="66.0" layoutY="362.0" text="Amount:" AnchorPane.bottomAnchor="183.0" AnchorPane.rightAnchor="197.0">
                <font>
                   <Font size="15.0" />
                </font>
             </Label>
-            <TextField fx:id="menu_amount" layoutX="129.0" layoutY="311.0" onAction="#menuAmount" prefHeight="25.0" prefWidth="126.0" promptText="\$0.0" AnchorPane.bottomAnchor="230.0" AnchorPane.rightAnchor="65.0" />
-            <Label layoutX="69.0" layoutY="343.0" text="Change:" AnchorPane.bottomAnchor="202.0" AnchorPane.rightAnchor="197.0">
+            <TextField fx:id="menu_amount" layoutX="129.0" layoutY="360.0" onAction="#menuAmount" prefHeight="25.0" prefWidth="126.0" promptText="\$0.0" AnchorPane.bottomAnchor="181.0" AnchorPane.rightAnchor="65.0" />
+            <Label layoutX="69.0" layoutY="392.0" text="Change:" AnchorPane.bottomAnchor="153.0" AnchorPane.rightAnchor="197.0">
                <font>
                   <Font size="15.0" />
                </font>
             </Label>
-            <Label fx:id="menu_change" layoutX="128.0" layoutY="343.0" prefHeight="21.0" prefWidth="127.0" text="\$0.0" AnchorPane.bottomAnchor="202.0" AnchorPane.rightAnchor="65.0">
+            <Label fx:id="menu_change" layoutX="128.0" layoutY="392.0" prefHeight="21.0" prefWidth="127.0" text="\$0.0" AnchorPane.bottomAnchor="153.0" AnchorPane.rightAnchor="65.0">
                <font>
                   <Font size="15.0" />
                </font>
             </Label>
             <Button fx:id="menu_payBtn" layoutX="15.0" layoutY="420.0" mnemonicParsing="false" onAction="#menuPayBtn" prefHeight="41.0" prefWidth="290.0" styleClass="btn" stylesheets="@design/mainFormDesign.css" text="Pay" AnchorPane.bottomAnchor="105.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0" />
             <Button fx:id="menu_removeBtn" layoutX="15.0" layoutY="489.0" mnemonicParsing="false" onAction="#menuRemoveBtn" prefHeight="41.0" prefWidth="290.0" styleClass="btn" stylesheets="@design/mainFormDesign.css" text="Remove" AnchorPane.bottomAnchor="36.0" AnchorPane.leftAnchor="15.0" />
-            <Button fx:id="menu_receiptBtn" layoutX="173.0" layoutY="489.0" mnemonicParsing="false" onAction="#menuReceiptBtn" prefHeight="41.0" prefWidth="119.0" styleClass="btn" stylesheets="@design/mainFormDesign.css" text="Receipt" visible="false" AnchorPane.bottomAnchor="36.0" AnchorPane.rightAnchor="28.0" />
+            <Button fx:id="menu_receiptBtn" layoutX="192.0" layoutY="283.0" mnemonicParsing="false" onAction="#menuRefresh" prefHeight="41.0" prefWidth="119.0" styleClass="btn" stylesheets="@design/mainFormDesign.css" text="Refresh" AnchorPane.bottomAnchor="242.0" AnchorPane.rightAnchor="9.0">
+               <font>
+                  <Font size="1.0" />
+               </font></Button>
          </children>
       </AnchorPane>
    </children>
