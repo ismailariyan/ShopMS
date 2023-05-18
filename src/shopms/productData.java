@@ -30,9 +30,16 @@ public class productData {
         this.image = image;
         this.date = date;
     }
-    
-    public productData(Integer id, String productId, String productName, 
-            String type, Integer quantity, Double price, String image, Date date){
+
+    public productData(String productId, String productName, String type, Integer stock) {
+        this.productId = productId;
+        this.productName = productName;
+        this.type = type;
+        this.stock = stock;
+    }
+
+    public productData(Integer id, String productId, String productName,
+                       String type, Integer quantity, Double price, String image, Date date){
         this.id = id;
         this.productId = productId;
         this.productName = productName;
